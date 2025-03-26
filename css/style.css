@@ -1,0 +1,293 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+    padding: 2rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Typography */
+h1, h2 {
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    color: #111;
+    position: relative;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-top: 1rem;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.2rem;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 0.3rem;
+}
+
+section {
+    margin-bottom: 2.5rem;
+    padding-left: 0.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #333;
+}
+
+a:hover {
+    border-bottom: none;
+}
+
+a.highlight {
+    color: #0066cc;
+    border-bottom: 1px solid #0066cc;
+}
+
+/* Layout */
+.container {
+    width: 100%;
+}
+
+header {
+    margin-bottom: 3rem;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+/* Lists */
+ul {
+    list-style-type: none;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+}
+
+li {
+    margin-bottom: 0.8rem;
+    position: relative;
+}
+
+li:before {
+    content: "•";
+    position: absolute;
+    left: -1rem;
+    color: #0066cc;
+}
+
+/* Social links and copyright */
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.social-links a {
+    margin-right: 0;
+}
+
+.copyright {
+    font-size: 0.75rem;
+    color: #aaa;
+    text-align: center;
+    margin-top: 5rem;
+    padding-top: 0.25rem;
+    border-top: none;
+    opacity: 0.7;
+}
+
+/* Profile header styling */
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.profile-image {
+    margin-right: 1.5rem;
+}
+
+.profile-image img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #f0f0f0;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-info h1 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+}
+
+.profile-info p {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+/* Experience section styling */
+.experience-list li {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+    align-items: baseline;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.experience-list li:before {
+    display: none;
+}
+
+.job-title {
+    font-weight: 500;
+    position: relative;
+}
+
+.job-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background-color: #f0f0f0;
+}
+
+.job-title span.highlight-company {
+    color: #0066cc;
+    font-weight: 500;
+}
+
+.highlight-company a {
+    color: #0066cc;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.2s ease;
+}
+
+.highlight-company a:hover {
+    border-bottom: 1px solid #0066cc;
+}
+
+.duration {
+    text-align: right;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Education achievement styling */
+.achievement {
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+    color: #444;
+    grid-column: 1 / -1;
+    font-style: italic;
+    padding-left: 0.2rem;
+}
+
+/* Project styling */
+.project-list {
+    padding-left: 0;
+}
+
+.project-item {
+    margin-bottom: 2.5rem;
+    position: relative;
+    list-style: none;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.project-item:last-child {
+    border-bottom: none;
+}
+
+.project-item:before {
+    display: none;
+}
+
+.project-item h3 {
+    margin-bottom: 0.7rem;
+}
+
+.project-description {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.project-details {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.project-details p {
+    margin-bottom: 0.3rem;
+}
+
+.project-links {
+    font-size: 0.9rem;
+}
+
+.project-links a {
+    margin-right: 1.5rem;
+    color: #0066cc;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.2s ease;
+}
+
+.project-links a:hover {
+    border-bottom: 1px solid #0066cc;
+}
+
+/* Make the experience section responsive */
+@media (max-width: 600px) {
+    .experience-list li {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+    
+    .duration {
+        text-align: left;
+        grid-row: 2;
+        font-style: italic;
+        margin-top: 4px;
+    }
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    body {
+        padding: 1rem;
+    }
+}
