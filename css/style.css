@@ -270,6 +270,97 @@ li:before {
     border-bottom: 1px solid #0066cc;
 }
 
+/* Update note styling */
+.update-note {
+    font-size: 0.6rem;
+    color: #e0e0e0;
+    font-weight: 300;
+    font-style: italic;
+    position: absolute;
+    bottom: -1.2rem;
+    right: 0;
+    opacity: 0.6;
+}
+
+/* Text center container */
+.text-center {
+    text-align: center;
+    width: 100%;
+}
+
+/* Weekly update hint in reads section */
+.weekly-update-hint {
+    font-size: 0.4rem;
+    color: #fefefe;
+    font-style: italic;
+    display: inline-block;
+    margin-bottom: 12px;
+    opacity: 0.15;
+    font-weight: 300;
+    letter-spacing: 0.03em;
+    text-transform: lowercase;
+}
+
+.weekly-update-hint:hover {
+    opacity: 0.4;
+    color: #e8e8e8;
+}
+
+/* Weekly update note in footer */
+.weekly-update {
+    opacity: 0.5;
+    font-size: 0.7em;
+    font-weight: normal;
+}
+
+/* Pagination Styles */
+.reads-container {
+    position: relative;
+}
+
+#reads-list li {
+    display: none;
+}
+
+#reads-list li.active {
+    display: block;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.pagination-btn {
+    background: none;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: #333;
+    transition: all 0.2s ease;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background-color: #f9f9f9;
+    border-color: #ddd;
+}
+
+.pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#page-indicator {
+    font-size: 0.85rem;
+    color: #666;
+}
+
 /* Make the experience section responsive */
 @media (max-width: 600px) {
     .experience-list li {
