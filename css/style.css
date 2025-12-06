@@ -133,8 +133,8 @@ li:before {
 }
 
 .profile-image img {
-    width: 90px;
-    height: 90px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid #f0f0f0;
