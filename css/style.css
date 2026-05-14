@@ -10,15 +10,15 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #fff;
-    padding: 2rem;
-    max-width: 700px;
+    padding: 2rem clamp(1rem, 4vw, 2rem) 2rem clamp(0.2rem, 1vw, 0.55rem);
+    max-width: 1120px;
     margin: 0 auto;
 }
 
 /* Typography */
 h1, h2 {
     font-weight: 600;
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.85rem;
     color: #111;
     position: relative;
 }
@@ -32,15 +32,18 @@ h1 {
 
 h2 {
     font-size: 1.5rem;
-    margin-top: 2.5rem;
-    margin-bottom: 1.2rem;
+    margin-top: 1.35rem;
+    margin-bottom: 0.85rem;
     border-bottom: 1px solid #f0f0f0;
     padding-bottom: 0.3rem;
 }
 
 section {
-    margin-bottom: 2.5rem;
     padding-left: 0.5rem;
+}
+
+section:not(#reads) {
+    margin-bottom: 1.35rem;
 }
 
 p {
@@ -65,18 +68,30 @@ a.highlight {
 /* Layout */
 .container {
     width: 100%;
+    display: grid;
+    grid-template-columns: clamp(260px, 22vw, 380px) minmax(0, 1fr);
+    gap: clamp(3.5rem, 5vw, 6rem);
+    align-items: start;
+}
+
+.main-column {
+    grid-column: 2;
+    min-width: 0;
+    width: 100%;
+}
+
+/* readability cap — overridden to none on desktop */
+.main-body {
+    max-width: 720px;
 }
 
 header {
-    margin-bottom: 3rem;
-}
-
-section {
-    margin-bottom: 2rem;
+    margin-bottom: 1.65rem;
+    position: relative;
 }
 
 footer {
-    margin-top: 3rem;
+    margin-top: 1.65rem;
     padding-top: 1rem;
     border-top: 1px solid #eee;
 }
@@ -103,19 +118,28 @@ li:before {
 /* Social links and copyright */
 .social-links {
     display: flex;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.82rem;
+    line-height: 1;
 }
 
 .social-links a {
     margin-right: 0;
+    color: #555;
+    border-bottom-color: #ddd;
+}
+
+.social-links a:hover {
+    color: #0066cc;
 }
 
 .copyright {
     font-size: 0.75rem;
     color: #aaa;
     text-align: center;
-    margin-top: 5rem;
+    margin-top: 2rem;
     padding-top: 0.25rem;
     border-top: none;
     opacity: 0.7;
@@ -125,7 +149,7 @@ li:before {
 .profile-header {
     display: flex;
     align-items: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .profile-image {
@@ -318,37 +342,92 @@ li:before {
     position: relative;
 }
 
+#reads {
+    grid-column: 1;
+    padding-left: 0.05rem;
+    padding-top: 0.45rem;
+    margin-bottom: 0;
+    margin-right: 0;
+    max-width: 340px;
+    color: #555;
+}
+
+#reads h2 {
+    margin-top: 0;
+    margin-bottom: 0.65rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid #eee;
+    color: #555;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: lowercase;
+}
+
+#reads-list {
+    padding-left: 0.85rem;
+    margin-bottom: 0.65rem;
+}
+
 #reads-list li {
     display: none;
+    margin-bottom: 0.65rem;
+    color: #777;
+    line-height: 1.32;
+}
+
+#reads-list li:before {
+    top: 0.12rem;
+    color: #b8b8b8;
 }
 
 #reads-list li.active {
     display: block;
 }
 
+#reads-list a {
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.35;
+}
+
+#reads-list a:hover {
+    border-bottom-color: transparent;
+}
+
+#reads-list .achievement {
+    margin-top: 0.2rem;
+    margin-bottom: 0;
+    padding-left: 0;
+    color: #888;
+    font-size: 0.88rem;
+    line-height: 1.38;
+}
+
 .pagination {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 1.5rem;
-    padding-top: 1rem;
+    margin-top: 1rem;
+    padding-top: 0.8rem;
     border-top: 1px solid #eee;
 }
 
 .pagination-btn {
     background: none;
-    border: 1px solid #eee;
+    border: none;
     border-radius: 4px;
-    padding: 0.5rem 1rem;
+    padding: 0;
     cursor: pointer;
-    font-size: 0.85rem;
-    color: #333;
+    font-size: 0.82rem;
+    color: #777;
     transition: all 0.2s ease;
 }
 
 .pagination-btn:hover:not(:disabled) {
-    background-color: #f9f9f9;
-    border-color: #ddd;
+    color: #0066cc;
 }
 
 .pagination-btn:disabled {
@@ -357,8 +436,69 @@ li:before {
 }
 
 #page-indicator {
-    font-size: 0.85rem;
-    color: #666;
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+/* Split scroll panes */
+@media (min-width: 901px) {
+    html {
+        height: 100%;
+    }
+
+    body {
+        height: 100%;
+        overflow: hidden;
+        padding: 1.5rem clamp(1.5rem, 3vw, 3.5rem);
+        max-width: 1560px;
+        margin: 0 auto;
+    }
+
+    .container {
+        height: calc(100vh - 3rem);
+        max-height: calc(100vh - 3rem);
+        overflow: hidden;
+        align-items: stretch;
+        grid-template-columns: clamp(280px, 24vw, 400px) minmax(0, 1fr);
+        gap: clamp(3rem, 4.5vw, 5rem);
+        width: 100%;
+        max-width: none;
+        margin: 0;
+    }
+
+    #reads {
+        max-width: none;
+        width: 100%;
+        align-self: stretch;
+        overflow-y: auto;
+        overflow-x: hidden;
+        min-height: 0;
+        padding-left: 0.2rem;
+        padding-right: 1.25rem;
+        padding-bottom: 1rem;
+        scrollbar-gutter: stable;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+    }
+
+    .main-column {
+        align-self: stretch;
+        width: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        min-height: 0;
+        padding-right: 1.25rem;
+        padding-bottom: 0.5rem;
+        scrollbar-gutter: stable;
+        display: flex;
+        flex-direction: column;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+    }
+
+    .main-body {
+        max-width: none;
+    }
 }
 
 /* Make the experience section responsive */
@@ -377,6 +517,57 @@ li:before {
 }
 
 /* Responsive design */
+@media (max-width: 900px) {
+    body {
+        max-width: 700px;
+        height: auto;
+        overflow: visible;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 2rem 0.65rem;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        max-height: none;
+        overflow: visible;
+        gap: 0;
+        grid-template-columns: 1fr;
+    }
+
+    .main-column {
+        display: contents;
+    }
+
+    header {
+        order: 1;
+        width: 100%;
+    }
+
+    #reads {
+        order: 2;
+        grid-column: auto;
+        position: static;
+        margin-top: 1.5rem;
+        margin-bottom: 2rem;
+        padding-left: 0.5rem;
+        padding-top: 0;
+        max-width: none;
+        overflow: visible;
+    }
+
+    .main-body {
+        order: 3;
+        width: 100%;
+    }
+
+    .social-links {
+        justify-content: flex-start;
+        margin-bottom: 1.5rem;
+    }
+}
+
 @media (max-width: 600px) {
     body {
         padding: 1rem;

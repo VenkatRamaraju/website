@@ -8,128 +8,6 @@
 </head>
 <body>
     <div class="container">
-        <header>
-            <div class="profile-header">
-                <div class="profile-image">
-                    <img src="face.jpeg" alt="Venkat Ramaraju">
-                </div>
-                <div class="profile-info">
-                    <h1>Venkat Ramaraju</h1>
-                    <p>software engineer @ tabapay working on all things payments.</p>
-                    <p>interested in cross-lingual llms.</p>
-                </div>
-            </div>
-        </header>
-
-        <section id="experience">
-            <h2>experience</h2>
-            <ul class="experience-list">
-                <li>
-                    <span class="job-title">swe iii <span class="highlight-company"><a href="https://www.tabapay.com" target="_blank">@ tabapay</a></span></span>
-                    <span class="duration">jan'23 - present</span>
-                </li>
-                <li>
-                    <span class="job-title">sde <span class="highlight-company"><a href="https://www.linkedin.com/company/lab126/" target="_blank">@ amazon lab126</a></span></span>
-                    <span class="duration">jun'22 - jan'23</span>
-                </li>
-                <li>
-                    <span class="job-title">swe <span class="highlight-company"><a href="https://github.com/operator-framework/operator-sdk" target="_blank">@ redhat</a></span></span>
-                    <span class="duration">may'21 - jun'22</span>
-                </li>
-                <li>
-                    <span class="job-title">researcher <span class="highlight-company"><a href="https://biodesign.asu.edu/cxfel/" target="_blank">@ compact x-ray free electron lab</a></span></span>
-                    <span class="duration">jan'21 - may'21</span>
-                </li>
-                <li>
-                    <span class="job-title">teaching assistant, <span class="highlight-company"><a href="https://courses.ea.asu.edu/assets/courses/CSE%20110_%20Programming%20for%20Everyone_%20Introduction%20to%20Programming.pdf" target="_blank">cse 110 @ asu</a></span></span>
-                    <span class="duration">3 semesters</span>
-                </li>
-            </ul>
-        </section>
-
-        <section id="education">
-            <h2>education</h2>
-            <ul class="experience-list">
-                <li>
-                    <span class="job-title">bachelors in computer science <span class="highlight-company"><a href="https://www.asu.edu" target="_blank">@ arizona state university</a></span></span>
-                    <span class="duration">aug'18 - dec'21</span>
-                    <p class="achievement">graduated early with a 4.0 GPA</p>
-                </li>
-            </ul>
-        </section>
-
-        <section id="projects">
-            <h2>projects</h2>
-            <p style="font-style: italic; opacity: 0.7;">some large efforts, some weekend hacking projects</p>
-            <ul>
-                <li>
-                    <a href="https://github.com/VenkatRamaraju/polydb" target="_blank" class="highlight">polydb</a>: a vector database written from scratch in go
-                    <p class="achievement">trained an embedding model from scratch via sgns + pytorch. apiserver communicates with vector services via grpc. more training runs in progress.</p>
-                    <p class="achievement">at some point, i may completely overhaul the model and train it to align semantically similar sentences from different languages into similar vector spaces. this would allow users to search various documents in whatever language they would like.</p>
-                </li>
-                <li>
-                    <a href="https://github.com/VenkatRamaraju/flowcast" target="_blank" class="highlight">flowcast</a>: an xgboost model that predicts 15-minute net bike flow for lyft bike stations in the bay area
-                    <p class="achievement">1. trained an xgboost model on 4 years of lyft bike rides to predict net bike flow throughout the day for each station based on weather, day/time and other signals. <br>2. achieved a MAE of 1.07 on the validation set.
-                        <br>3. built a fullstack app (fastapi + react) to interactively run model inference. <br>4. need to increase feature vectors, perhaps adding information about ongoing events in the area of the station.</p>
-                </li>
-                <li>
-                    <a href="https://github.com/VenkatRamaraju/polyglot" target="_blank" class="highlight">polyglot</a>: a multilingual tokenizer implemented from scratch in go via the byte-pair encoding algorithm
-                    <p class="achievement">achieves uniform compression and fertility across across 10 diverse scripts. training to achieving 5.0 compression in progress.</p>
-                </li>
-                <li>
-                    <a href="https://github.com/VenkatRamaraju/venkbot" target="_blank" class="highlight">venkbot</a>: a personal agentic toolkit to automate mundane tasks in my life
-                    <p class="achievement">whatsapp chat (twilio) hits my self-hosted server; an llm-backed dispatcher invokes the right mix of bespoke tools + mcps to perform the task.</p>
-                </li>
-                <li>
-                    <a href="http://dataquest.work/login" target="_blank" class="highlight">dataquest.ai</a>: an authenticated ai natural language querying tool for documents, datasets, videos, emails, etc. 
-                    <br>this application implements rate limiting, request caching, and connection pooling from scratch.
-                    <p class="achievement">leverages pinecone, langchain with gpt3.5 turbo, gmail api, youtube transcription api, and stripe api integrations.</p>
-                </li>
-                <li>
-                    <a href="https://github.com/VenkatRamaraju/whaletracker" target="_blank" class="highlight">whaletracker</a>: realtime whale trade tracker with polymarket websockets
-                    <p class="achievement">dynamically discovers and subscribes to new markets, computes a spread asymmetry pressure metric, stores data in redis, sends email alerts on threshold breach</p>
-                </li>
-                <li>
-                    <a href="https://github.com/VenkatRamaraju/gpt-oss-fb-finetuned" target="_blank" class="highlight">fb-finetuned</a>: finetuned gpt-oss-20b on 1.5 yrs of my facebook texts to learn my texting style
-                    <p class="achievement">1. built an dataset generation agent with langgraph + ollama (llamab3.2b)<br>2. finetuned gpt-oss-20b with peft + lora (shoutout unsloth!)<br>3. will create a stt pipeline soon with the finetuned model</p>
-                </li>
-                <li>
-                    <a href="https://github.com/VenkatRamaraju/zillow-bot" target="_blank" class="highlight">zillow-bot</a>: a bot that emails you new weekly zillow postings based on your search criteria
-                    <p class="achievement">1. rapid api for access to zillow data<br>2. s3 to store reports<br>3. weekly cronjob set up with github actions for workflow automation</p>
-                </li>
-                <li>
-                    <a href="https://github.com/VenkatRamaraju/" target="_blank" class="highlight">interspersed bilingual decoder (ibd)</a>: a code-mixing decoder-only model fine tuned on top of LLama-3.1.
-                    <p class="achievement">generated hinglish code-mixed datasets using pos tagging with stanza/spacy, performed sft + dpo for alignment.</p>
-                </li>
-                <li>
-                    <a href="https://github.com/VenkatRamaraju/Agora" target="_blank" class="highlight">agora</a>: stock recommender based on public sentiment
-                    <p class="achievement">uses VADER sentiment analysis models, daily web scrapers using selenium, yfinance api, xgboost and random forest ensemble models</p>
-                    <p class="achievement">big shoutout to Dr. Ajay Bansal and his PhD student James Smith for their support in elevating this project.</p>
-                </li>
-            </ul>
-        </section>
-
-        <section id="papers">
-            <h2>papers</h2>
-            <ul>
-                <li>
-                    <a href="https://www.worldscientific.com/doi/10.1142/S1793351X24440021" target="_blank" class="highlight">Forecasting Stock Market Performance: An Ensemble Learning-Based Approach</a>
-                    <p class="achievement">Journal paper - Nominated by AIKE 2023 chairs for the IJSC 2024 edition</p>
-                </li>
-                <li>
-                    <a href="https://ieeexplore.ieee.org/document/10381559" target="_blank" class="highlight">Forecasting Stock Market Performance: An Ensemble Learning-Based Approach</a>
-                    <p class="achievement">Long paper - AIKE 2023, Published in IEEE Xplore</p>
-                </li>
-                <li>
-                    <a href="https://ieeexplore.ieee.org/document/9939140" target="_blank" class="highlight">A Sentiment Analysis Based Stock Recommendation System</a>
-                    <p class="achievement">Long paper - AIKE 2022, Published in IEEE Xplore</p>
-                </li>
-                <li>
-                    <a href="https://ieeexplore.ieee.org/document/9736313" target="_blank" class="highlight">Agora: Introducing the Internet's Opinion to Traditional Stock Analysis and Prediction</a>
-                    <p class="achievement">Short paper - ICSC 2022, Published in IEEE Xplore</p>
-                </li>
-            </ul>
-        </section>
         <section id="reads">
             <h2>interesting (recent) reads & listens</h2>
             <div class="reads-container">
@@ -244,24 +122,151 @@
                     </li>
                 </ul>
                 <div class="pagination">
-                    <button id="prev-page" class="pagination-btn" disabled>&larr; Previous</button>
-                    <span id="page-indicator">Page <span id="current-page">1</span> of <span id="total-pages">2</span></span>
-                    <button id="next-page" class="pagination-btn">Next &rarr;</button>
+                    <button id="prev-page" class="pagination-btn" disabled>&larr; prev</button>
+                    <span id="page-indicator"><span id="current-page">1</span> / <span id="total-pages">2</span></span>
+                    <button id="next-page" class="pagination-btn">more &rarr;</button>
                 </div>
             </div>
         </section>
 
-        <footer>
+        <main class="main-column">
+        <header>
             <div class="social-links">
                 <a href="https://github.com/VenkatRamaraju">github</a>
                 <a href="https://x.com/venky_ramaraju">twitter</a>
                 <a href="https://www.linkedin.com/in/venkat-ramaraju/">linkedin</a>
                 <a href="mailto:venky2063@gmail.com">email</a>
             </div>
+            <div class="profile-header">
+                <div class="profile-image">
+                    <img src="face.jpeg" alt="Venkat Ramaraju">
+                </div>
+                <div class="profile-info">
+                    <h1>Venkat Ramaraju</h1>
+                    <p>engineer @ tabapay working on all things payments.</p>
+                    <p>interested in cross-lingual llms.</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-body">
+        <section id="experience">
+            <h2>experience</h2>
+            <ul class="experience-list">
+                <li>
+                    <span class="job-title">swe iii <span class="highlight-company"><a href="https://www.tabapay.com" target="_blank">@ tabapay</a></span></span>
+                    <span class="duration">jan'23 - present</span>
+                </li>
+                <li>
+                    <span class="job-title">sde <span class="highlight-company"><a href="https://www.linkedin.com/company/lab126/" target="_blank">@ amazon lab126</a></span></span>
+                    <span class="duration">jun'22 - jan'23</span>
+                </li>
+                <li>
+                    <span class="job-title">swe <span class="highlight-company"><a href="https://github.com/operator-framework/operator-sdk" target="_blank">@ redhat</a></span></span>
+                    <span class="duration">may'21 - jun'22</span>
+                </li>
+                <li>
+                    <span class="job-title">researcher <span class="highlight-company"><a href="https://biodesign.asu.edu/cxfel/" target="_blank">@ compact x-ray free electron lab</a></span></span>
+                    <span class="duration">jan'21 - may'21</span>
+                </li>
+                <li>
+                    <span class="job-title">teaching assistant, <span class="highlight-company"><a href="https://courses.ea.asu.edu/assets/courses/CSE%20110_%20Programming%20for%20Everyone_%20Introduction%20to%20Programming.pdf" target="_blank">cse 110 @ asu</a></span></span>
+                    <span class="duration">3 semesters</span>
+                </li>
+            </ul>
+        </section>
+
+        <section id="education">
+            <h2>education</h2>
+            <ul class="experience-list">
+                <li>
+                    <span class="job-title">bachelors in computer science <span class="highlight-company"><a href="https://www.asu.edu" target="_blank">@ arizona state university</a></span></span>
+                    <span class="duration">aug'18 - dec'21</span>
+                    <p class="achievement">graduated early with a 4.0 GPA</p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h2>projects</h2>
+            <p style="font-style: italic; opacity: 0.7;">some large efforts, some weekend hacking projects</p>
+            <ul>
+                <li>
+                    <a href="https://github.com/VenkatRamaraju/polydb" target="_blank" class="highlight">polydb</a>: a vector database written from scratch in go
+                    <p class="achievement">trained an embedding model from scratch via sgns + pytorch. apiserver communicates with vector services via grpc. more training runs in progress.</p>
+                    <p class="achievement">at some point, i may completely overhaul the model and train it to align semantically similar sentences from different languages into similar vector spaces. this would allow users to search various documents in whatever language they would like.</p>
+                </li>
+                <li>
+                    <a href="https://github.com/VenkatRamaraju/flowcast" target="_blank" class="highlight">flowcast</a>: an xgboost model that predicts 15-minute net bike flow for lyft bike stations in the bay area
+                    <p class="achievement">1. trained an xgboost model on 4 years of lyft bike rides to predict net bike flow throughout the day for each station based on weather, day/time and other signals. <br>2. achieved a MAE of 1.07 on the validation set.
+                        <br>3. built a fullstack app (fastapi + react) to interactively run model inference. <br>4. need to increase feature vectors, perhaps adding information about ongoing events in the area of the station.</p>
+                </li>
+                <li>
+                    <a href="https://github.com/VenkatRamaraju/polyglot" target="_blank" class="highlight">polyglot</a>: a multilingual tokenizer implemented from scratch in go via the byte-pair encoding algorithm
+                    <p class="achievement">achieves uniform compression and fertility across across 10 diverse scripts. training to achieving 5.0 compression in progress.</p>
+                </li>
+                <li>
+                    <a href="https://github.com/VenkatRamaraju/venkbot" target="_blank" class="highlight">venkbot</a>: a personal agentic toolkit to automate mundane tasks in my life
+                    <p class="achievement">whatsapp chat (twilio) hits my self-hosted server; an llm-backed dispatcher invokes the right mix of bespoke tools + mcps to perform the task.</p>
+                </li>
+                <li>
+                    <a href="http://dataquest.work/login" target="_blank" class="highlight">dataquest.ai</a>: an authenticated ai natural language querying tool for documents, datasets, videos, emails, etc. 
+                    <br>this application implements rate limiting, request caching, and connection pooling from scratch.
+                    <p class="achievement">leverages pinecone, langchain with gpt3.5 turbo, gmail api, youtube transcription api, and stripe api integrations.</p>
+                </li>
+                <li>
+                    <a href="https://github.com/VenkatRamaraju/whaletracker" target="_blank" class="highlight">whaletracker</a>: realtime whale trade tracker with polymarket websockets
+                    <p class="achievement">dynamically discovers and subscribes to new markets, computes a spread asymmetry pressure metric, stores data in redis, sends email alerts on threshold breach</p>
+                </li>
+                <li>
+                    <a href="https://github.com/VenkatRamaraju/gpt-oss-fb-finetuned" target="_blank" class="highlight">fb-finetuned</a>: finetuned gpt-oss-20b on 1.5 yrs of my facebook texts to learn my texting style
+                    <p class="achievement">1. built an dataset generation agent with langgraph + ollama (llamab3.2b)<br>2. finetuned gpt-oss-20b with peft + lora (shoutout unsloth!)<br>3. will create a stt pipeline soon with the finetuned model</p>
+                </li>
+                <li>
+                    <a href="https://github.com/VenkatRamaraju/zillow-bot" target="_blank" class="highlight">zillow-bot</a>: a bot that emails you new weekly zillow postings based on your search criteria
+                    <p class="achievement">1. rapid api for access to zillow data<br>2. s3 to store reports<br>3. weekly cronjob set up with github actions for workflow automation</p>
+                </li>
+                <li>
+                    <a href="https://github.com/VenkatRamaraju/" target="_blank" class="highlight">interspersed bilingual decoder (ibd)</a>: a code-mixing decoder-only model fine tuned on top of LLama-3.1.
+                    <p class="achievement">generated hinglish code-mixed datasets using pos tagging with stanza/spacy, performed sft + dpo for alignment.</p>
+                </li>
+                <li>
+                    <a href="https://github.com/VenkatRamaraju/Agora" target="_blank" class="highlight">agora</a>: stock recommender based on public sentiment
+                    <p class="achievement">uses VADER sentiment analysis models, daily web scrapers using selenium, yfinance api, xgboost and random forest ensemble models</p>
+                    <p class="achievement">big shoutout to Dr. Ajay Bansal and his PhD student James Smith for their support in elevating this project.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="papers">
+            <h2>papers</h2>
+            <ul>
+                <li>
+                    <a href="https://www.worldscientific.com/doi/10.1142/S1793351X24440021" target="_blank" class="highlight">Forecasting Stock Market Performance: An Ensemble Learning-Based Approach</a>
+                    <p class="achievement">Journal paper - Nominated by AIKE 2023 chairs for the IJSC 2024 edition</p>
+                </li>
+                <li>
+                    <a href="https://ieeexplore.ieee.org/document/10381559" target="_blank" class="highlight">Forecasting Stock Market Performance: An Ensemble Learning-Based Approach</a>
+                    <p class="achievement">Long paper - AIKE 2023, Published in IEEE Xplore</p>
+                </li>
+                <li>
+                    <a href="https://ieeexplore.ieee.org/document/9939140" target="_blank" class="highlight">A Sentiment Analysis Based Stock Recommendation System</a>
+                    <p class="achievement">Long paper - AIKE 2022, Published in IEEE Xplore</p>
+                </li>
+                <li>
+                    <a href="https://ieeexplore.ieee.org/document/9736313" target="_blank" class="highlight">Agora: Introducing the Internet's Opinion to Traditional Stock Analysis and Prediction</a>
+                    <p class="achievement">Short paper - ICSC 2022, Published in IEEE Xplore</p>
+                </li>
+            </ul>
+        </section>
+
+        <footer>
             <div class="copyright">
                 &copy; 2026 Venkat Ramaraju
             </div>
         </footer>
+        </div>
+        </main>
     </div>
     <script src="js/script.js"></script>
 </body>

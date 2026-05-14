@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Pagination for the reads section
     const readsListItems = document.querySelectorAll('#reads-list li');
-    const itemsPerPage = 3;
+    const itemsPerPage = 10;
     const totalPages = Math.ceil(readsListItems.length / itemsPerPage);
     
     // Set total pages in the page indicator
