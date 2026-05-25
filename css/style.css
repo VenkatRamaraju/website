@@ -337,7 +337,7 @@ li:before {
     font-weight: normal;
 }
 
-/* Pagination Styles */
+/* Reads sidebar */
 .reads-container {
     position: relative;
 }
@@ -370,7 +370,7 @@ li:before {
 }
 
 #reads-list li {
-    display: none;
+    display: block;
     margin-bottom: 0.65rem;
     color: #777;
     line-height: 1.32;
@@ -379,10 +379,6 @@ li:before {
 #reads-list li:before {
     top: 0.12rem;
     color: #b8b8b8;
-}
-
-#reads-list li.active {
-    display: block;
 }
 
 #reads-list a {
@@ -404,40 +400,6 @@ li:before {
     color: #888;
     font-size: 0.88rem;
     line-height: 1.38;
-}
-
-.pagination {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1rem;
-    padding-top: 0.8rem;
-    border-top: 1px solid #eee;
-}
-
-.pagination-btn {
-    background: none;
-    border: none;
-    border-radius: 4px;
-    padding: 0;
-    cursor: pointer;
-    font-size: 0.82rem;
-    color: #777;
-    transition: all 0.2s ease;
-}
-
-.pagination-btn:hover:not(:disabled) {
-    color: #0066cc;
-}
-
-.pagination-btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
-#page-indicator {
-    font-size: 0.8rem;
-    color: #aaa;
 }
 
 /* Split scroll panes */
