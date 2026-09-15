@@ -189,7 +189,7 @@ li:before {
 .experience-list li {
     display: grid;
     grid-template-columns: 36px 3fr 1fr;
-    gap: 10px 14px;
+    gap: 10px 16px;
     align-items: center;
     margin-bottom: 1rem;
     position: relative;
@@ -211,7 +211,8 @@ li:before {
     height: 36px;
     width: 36px;
     object-fit: contain;
-    object-position: center;
+    object-position: right center;
+    justify-self: end;
     display: block;
 }
 
@@ -488,7 +489,7 @@ li:before {
 @media (max-width: 600px) {
     .experience-list li {
         grid-template-columns: 36px 1fr;
-        gap: 8px 10px;
+        gap: 8px 16px;
     }
     
     .duration {
