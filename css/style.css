@@ -188,9 +188,9 @@ li:before {
 /* Experience section styling */
 .experience-list li {
     display: grid;
-    grid-template-columns: 3fr 1fr;
-    gap: 20px;
-    align-items: baseline;
+    grid-template-columns: 36px 3fr 1fr;
+    gap: 10px 14px;
+    align-items: center;
     margin-bottom: 1rem;
     position: relative;
 }
@@ -205,6 +205,14 @@ li:before {
 
 #education .experience-list li:last-child {
     margin-bottom: 0;
+}
+
+.org-logo {
+    height: 36px;
+    width: 36px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
 }
 
 .job-title {
@@ -479,12 +487,13 @@ li:before {
 /* Make the experience section responsive */
 @media (max-width: 600px) {
     .experience-list li {
-        grid-template-columns: 1fr;
-        gap: 5px;
+        grid-template-columns: 36px 1fr;
+        gap: 8px 10px;
     }
     
     .duration {
         text-align: left;
+        grid-column: 2;
         grid-row: 2;
         font-style: italic;
         margin-top: 4px;
