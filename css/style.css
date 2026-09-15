@@ -211,8 +211,8 @@ li:before {
     height: 36px;
     width: 36px;
     object-fit: contain;
-    object-position: right center;
-    justify-self: end;
+    object-position: center;
+    justify-self: center;
     display: block;
 }
 
